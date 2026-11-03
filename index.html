@@ -685,7 +685,6 @@ const firebaseConfig = {
       if (!kls || !mpl || !ta || !sem) return;
       document.getElementById('tabelRekapWadah').innerHTML = '<div class="text-center py-4"><div class="spinner-border text-info"></div></div>';
       
-      // Ambil data siswa & absen
       const qS = query(collection(db, "siswa"), where("kelas", "==", kls));
       const sSnap = await getDocs(qS);
       let siswaList = []; sSnap.forEach(d => siswaList.push(d.data().nama));
